@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+char font[] = "Droid Sans Mono:pixelsize=12:antialias=false:autohint=true";
 int borderpx = 2;
 
 /*
@@ -16,7 +16,7 @@ int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char shell[] = "/bin/sh";
+static char shell[] = "/bin/bash";
 static char *utmp = NULL;
 static char stty_args[] = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -82,33 +82,56 @@ char termname[] = "st-256color";
  */
 static unsigned int tabspaces = 8;
 
+#define color00 "#0c0d0e"
+#define color01 "#e31a1c"
+#define color02 "#31a354"
+#define color03 "#dca060"
+#define color04 "#3182bd"
+#define color05 "#756bb1"
+#define color06 "#80b1d3"
+#define color07 "#b7b8b9"
+#define color08 "#737475"
+#define color09 color01
+#define color10 color02
+#define color11 color03
+#define color12 color04
+#define color13 color05
+#define color14 color06
+#define color15 "#fcfdfe"
+#define color16 "#e6550d"
+#define color17 "#b15928"
+#define color18 "#2e2f30"
+#define color19 "#515253"
+#define color20 "#959697"
+#define color21 "#dadbdc"
+
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
+color00,
+color01,
+color02,
+color03,
+color04,
+color05,
+color06,
+color07,
+color08,
+color09,
+color10,
+color11,
+color12,
+color13,
+color14,
+color15,
+color16,
+color17,
+color18,
+color19,
+color20,
+color21,
+[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
 };
 
 
@@ -118,8 +141,8 @@ const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultcs = 7;
+unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
